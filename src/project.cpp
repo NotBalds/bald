@@ -13,10 +13,9 @@ private:
 		system(("mkdir -p " + name + "/src/").c_str());
 		cout << "Changing dir...\n";
 		chdir(name.c_str());
-		cout << "Creating code and baldfile";
+		cout << "Creating code and baldfile\n";
 		system("touch src/main.cpp baldfile");
-
-			
+		cout << "Done! Use 'cd " + name + "' to go to project directory\n";
 	}
 public:
 	void parse(argh::parser parser) { 
