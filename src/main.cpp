@@ -3,6 +3,7 @@
 
 #include "project.cpp"
 #include "builder.cpp"
+#include "runner.cpp"
 
 using namespace std;
 
@@ -16,5 +17,16 @@ int main(int, char* argv[]) {
 	if (parser[1] == "build") {
 		Builder builder;
 		builder.build();
+	}
+	if (parser[1] == "run") {
+		Runner runner;
+		runner.run();
+	}
+	if (parser[1].empty()) {
+		Builder builder;
+		Runner runner;
+
+		builder.build();
+		runner.run();
 	}
 }
