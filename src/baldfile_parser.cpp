@@ -33,7 +33,7 @@ public:
 		return _data["compiler"]["language"].value_or("clang++");
 	}
 	string cppStandart() {
-		return _data["compiler"]["standart"].value_or("c++17");
+		return _data["compiler"]["standard"].value_or("c++17");
 	}
 	string outputFile() {
 		return _data["output"]["name"].value_or("out");

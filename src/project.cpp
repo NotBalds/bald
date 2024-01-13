@@ -23,15 +23,16 @@ private:
 	void open_project(argh::parser parser) {
 		string name = parser[3];
 		
-		chdir((_projects_path + name).c_str());
-		system("$SHELL");
+		system(("cd " + _projects_path + name + "; $SHELL").c_str());
 	}
 public:
 	ProjectParser() {
 		ifstream file;
-		file.open("~/.config/bald/bald.config");
+		system("cat ~/.config/bald/bald.config > ./bald.config");
+		file.open("bald.config");
 		file >> _projects_path;
 		file.close();
+		system("rm ./bald.config");
 		system(("mkdir -p " + _projects_path).c_str());
 	}
 	void parse(argh::parser parser) { 
