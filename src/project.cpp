@@ -1,6 +1,7 @@
 #include <argh.h>
 #include <iostream>
 #include <unistd.h>
+#include <fstream>
 
 using namespace std;
 
@@ -27,7 +28,10 @@ private:
 	}
 public:
 	ProjectParser() {
-		_projects_path = getenv("BALD");
+		ifstream file;
+		file.open("~/.config/bald/bald.config");
+		file >> _projects_path;
+		file.close();
 		system(("mkdir -p " + _projects_path).c_str());
 	}
 	void parse(argh::parser parser) { 
