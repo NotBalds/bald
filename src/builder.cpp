@@ -27,7 +27,7 @@ public:
 		for (string src : baldfile_parser.sourceFiles()) {
 			cmd += src + " ";
 		}
-		cout << "Ended generating command: " << cmd << '\n';
+		cout << "Ended generating command...\n";
 		system(cmd.c_str());
 		cout << "Builded successfully, output: " << baldfile_parser.outputFile() << '\n';
 	}
