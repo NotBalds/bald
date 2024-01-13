@@ -1,2 +1,16 @@
-build g++ ./src/* -oout
-run ./out
+[project]
+name = "MyProject"
+
+[sources]
+files = ["src/main.cpp"]
+
+[includes]
+dirs = []
+
+[compiler]
+language = "clang++"
+standard = "c++17"
+options = []
+
+[output]
+name = "my_app"

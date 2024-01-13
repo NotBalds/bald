@@ -16,22 +16,23 @@ private:
 		cout << "[.] Executing mkdir...\n";
 		system(("mkdir -p " + _projects_path + name + "/src/").c_str());
 		cout << "[.] Creating code and baldfile\n";
-		system(("cp ~/.local/share/bald/baldfile.template " + _projects_path + name + "/baldfile").c_str());
+		system(("cp ~/.local/share/bald/baldfile.template " + _projects_path + name + "/baldfile.toml").c_str());
 		system(("cp ~/.local/share/bald/main.cpp.template " + _projects_path + name + "/src/main.cpp").c_str());
 		cout << "[+] Done! Use 'bald project open " + name + "' or 'cd " + _projects_path + name + "' to open project\n";
 	}
 	void open_project(argh::parser parser) {
 		string name = parser[3];
 		
-		chdir((_projects_path + name).c_str());
-		system("$SHELL");
+		system(("cd " + _projects_path + name + "; $SHELL").c_str());
 	}
 public:
 	ProjectParser() {
 		ifstream file;
-		file.open("~/.config/bald/bald.config");
+		system("cat ~/.config/bald/bald.config > ./bald.config");
+		file.open("bald.config");
 		file >> _projects_path;
 		file.close();
+		system("rm ./bald.config");
 		system(("mkdir -p " + _projects_path).c_str());
 	}
 	void parse(argh::parser parser) { 
