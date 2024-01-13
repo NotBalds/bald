@@ -1,7 +1,7 @@
 all: build install clean
 
 build:
-	g++ -oout ./src/*.cpp -I./include
+	clang++ -oout ./src/*.cpp -I./include
 
 install:
 	mkdir -p ~/.config/bald/
