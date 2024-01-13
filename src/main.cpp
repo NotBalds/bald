@@ -22,7 +22,7 @@ int main(int, char* argv[]) {
 		Runner runner;
 		runner.run();
 	}
-	if (parser[1].empty()) {
+	if (parser[1] == "") {
 		Builder builder;
 		Runner runner;
 
