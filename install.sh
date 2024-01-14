@@ -1,4 +1,4 @@
-echo "_____             _         _ "
+echo " _____             _         _ "
 sleep 0.09
 echo "|  _  |           | |       | |"
 sleep 0.1
