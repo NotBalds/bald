@@ -7,7 +7,7 @@
 - ```g++```
 - ```git```
 ## Installation progress
-- ```curl https://raw.githubusercontent.com/NotBalds/bald/main/install.sh | sh```
+- ```curl -s https://raw.githubusercontent.com/NotBalds/bald/main/install.sh | sh```
 I think it works only with normal users and only when ```~/.local/bin``` in your PATH
 # Usage
 - ```bald project new <name>``` - create a new bald project with name 'name' (creates in [projects directory](#Configuration))
