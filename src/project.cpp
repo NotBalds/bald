@@ -51,7 +51,7 @@ public:
 			init_project(get_current_dir_name());
 		}
 		else {
-			cout << "No or unknown command, usage: bald project <new|open|init> <name>\n";
+			cout << "No or unknown command, usage: bald project <new|init|open> <name>\n";
 		}
 	}
 };
