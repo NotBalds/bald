@@ -8,7 +8,7 @@ files = ["src/main.cpp"]
 dirs = []
 
 [compiler]
-language = "clang++"
+language = "g++"
 enableStdOption = true
 standard = "c++17"
 options = []

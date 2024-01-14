@@ -4,7 +4,7 @@
 # Installation
 ## Dependencies:
 - ```make```
-- ```clang++```
+- ```g++```
 ## Installation progress
 - ```git clone https://github.com/NotBalds/bald```
 - ```cd bald```
