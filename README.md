@@ -1,4 +1,4 @@
-# Bal is project-building system for Linux written in c++
+# Bald is project-building system for Linux written in c++
 #### It uses TOML to declare projects and builds them with YOUR options
 
 # Installation

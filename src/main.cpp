@@ -15,19 +15,19 @@ int main(int, char* argv[]) {
 		ProjectParser prs;
 		prs.parse(parser);
 	}
-	if (parser[1] == "build") {
+	else if (parser[1] == "build") {
 		Builder builder;
 		builder.build();
 	}
-	if (parser[1] == "run") {
+	else if (parser[1] == "run") {
 		Runner runner;
 		runner.run();
 	}
-	if (parser[1] == "clean") {
+	else if (parser[1] == "clean") {
 		Cleaner cleaner;
 		cleaner.clean();
 	}
-	if (parser[1] == "") {
+	else if (parser[1] == "") {
 		Builder builder;
 		Runner runner;
 		Cleaner cleaner;
@@ -35,5 +35,8 @@ int main(int, char* argv[]) {
 		builder.build();
 		runner.run();
 		cleaner.clean();
+	}
+	else {
+		cout << "Error: No such command, usage: bald <project|build|run|clean>\n";
 	}
 }
