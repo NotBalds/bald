@@ -42,5 +42,8 @@ public:
 		else if (parser[2] == "open") {
 			open_project(parser);
 		}
+		else {
+			cout << "No or unknown command, usage: bald project <new|open> <name>\n";
+		}
 	}
 };
