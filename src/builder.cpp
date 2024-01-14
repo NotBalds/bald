@@ -16,7 +16,7 @@ public:
 		cout << "Starting to build " << baldfile_parser.projectName() << "...\n";
 		string cmd;
 		cmd += baldfile_parser.compiler() + " ";
-		cmd += "--std=" + baldfile_parser.cppStandart() + " ";
+		if (baldfile_parser.standartEnabled()) cmd += "--std=" + baldfile_parser.cppStandart() + " ";
 		cmd += "-o" + baldfile_parser.outputFile() + " ";
 		for (string option : baldfile_parser.compilerOptions()) {
 			cmd += option + " ";

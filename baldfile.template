@@ -9,6 +9,7 @@ dirs = []
 
 [compiler]
 language = "clang++"
+enableStdOption = true
 standard = "c++17"
 options = []
 

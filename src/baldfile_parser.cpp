@@ -37,6 +37,9 @@ public:
 	string cppStandart() {
 		return _data["compiler"]["standard"].value_or("c++17");
 	}
+	bool standartEnabled() {
+		return _data["compiler"]["enableStdOption"].value_or(true);
+	}
 	string outputFile() {
 		return _data["output"]["name"].value_or("out");
 	}
