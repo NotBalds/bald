@@ -1,4 +1,4 @@
-# !!! WARNING: MIGRATED TO git.proggers.ru/NotBalds/bald
+# !!! WARNING: MIGRATED TO https://git.proggers.ru/NotBalds/bald
 # Bald is project-building system for Linux written in c++
 #### It uses TOML to declare projects and builds them with YOUR options
 
