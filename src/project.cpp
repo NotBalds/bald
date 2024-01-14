@@ -25,6 +25,11 @@ private:
 		
 		system(("cd " + _projects_path + name + "; $SHELL").c_str());
 	}
+	void init_project(string dir) {
+		cout << "[.] Creating baldfile\n";
+		system(("cp ~/.local/share/bald/baldfile.template " + dir + "/baldfile.toml").c_str());
+		cout << "[+] Done! Use 'cd " + dir + "' to open project\n";
+	}
 public:
 	ProjectParser() {
 		ifstream file;
@@ -42,8 +47,11 @@ public:
 		else if (parser[2] == "open") {
 			open_project(parser);
 		}
+		else if (parser[2] == "init") {
+			init_project(get_current_dir_name());
+		}
 		else {
-			cout << "No or unknown command, usage: bald project <new|open> <name>\n";
+			cout << "No or unknown command, usage: bald project <new|open|init> <name>\n";
 		}
 	}
 };
