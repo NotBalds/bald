@@ -5,10 +5,9 @@
 ## Dependencies:
 - ```make```
 - ```g++```
+- ```git```
 ## Installation progress
-- ```git clone https://github.com/NotBalds/bald```
-- ```cd bald```
-- ```make```
+- ```curl https://raw.githubusercontent.com/NotBalds/bald/main/install.sh | sh```
 I think it works only with normal users and only when ```~/.local/bin``` in your PATH
 # Usage
 - ```bald project new <name>``` - create a new bald project with name 'name' (creates in [projects directory](#Configuration))
