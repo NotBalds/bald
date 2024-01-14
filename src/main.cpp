@@ -4,6 +4,7 @@
 #include "project.cpp"
 #include "builder.cpp"
 #include "runner.cpp"
+#include "cleaner.cpp"
 
 using namespace std;
 
@@ -22,11 +23,17 @@ int main(int, char* argv[]) {
 		Runner runner;
 		runner.run();
 	}
+	if (parser[1] == "clean") {
+		Cleaner cleaner;
+		cleaner.clean();
+	}
 	if (parser[1] == "") {
 		Builder builder;
 		Runner runner;
+		Cleaner cleaner;
 
 		builder.build();
 		runner.run();
+		cleaner.clean();
 	}
 }
