@@ -14,8 +14,8 @@ public:
 	void run() {
 		BaldfileParser baldfile_parser(_directory + "/baldfile.toml");
 		cout << "Running " << baldfile_parser.projectName() << "...\n";
-		cout << "==========START=OF=PROGRAM==========\n";
+		cout << "|-----------| START OF PROGRAM |-----------|\n";
 		system(("./" + baldfile_parser.outputFile()).c_str());
-		cout << "==========START=OF=PROGRAM==========\n";
+		cout << " |-----------| END OF PROGRAM |-----------|\n";
 	}
 };
