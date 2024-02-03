@@ -45,3 +45,4 @@ echo ""
 echo ""
 echo ""
 echo "Installation finished, read https://github.com/NotBalds/bald/blob/README.md for usage!")
+sleep 5

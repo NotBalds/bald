@@ -1,7 +1,7 @@
 all: build install clean
 
 build:
-	g++ -oout ./src/*.cpp -I./include
+	g++ -oout ./src/*.cpp -I./include --std=c++17
 
 install:
 	mkdir -p ~/.config/bald/
