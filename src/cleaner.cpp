@@ -13,8 +13,8 @@ public:
 	}
 	void clean() {
 		BaldfileParser baldfile_parser(_directory + "/baldfile.toml");
-		cout << "Cleaning in " << baldfile_parser.projectName() << "...\n";
+		cout << "[.] Cleaning in " << baldfile_parser.projectName() << "...\n";
 		system(("rm -rf " + baldfile_parser.outputFile()).c_str());
-		cout << "Cleaned successfully!\n";
+		cout << "[!] Cleaned successfully!\n";
 	}
 };

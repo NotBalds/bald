@@ -37,6 +37,6 @@ int main(int, char* argv[]) {
 		cleaner.clean();
 	}
 	else {
-		cout << "Error: No such command, usage: bald <project|build|run|clean>\n";
+		cout << "[!] Error: No such command, usage: bald <project|build|run|clean>\n";
 	}
 }
