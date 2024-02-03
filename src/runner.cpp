@@ -16,6 +16,6 @@ public:
 		cout << "Running " << baldfile_parser.projectName() << "...\n";
 		cout << "|-----------| START OF PROGRAM |-----------|\n";
 		system(("./" + baldfile_parser.outputFile()).c_str());
-		cout << " |-----------| END OF PROGRAM |-----------|\n";
+		cout << "|------------| END OF PROGRAM |------------|\n";
 	}
 };
