@@ -18,14 +18,14 @@ public:
 		cmd += baldfile_parser.compiler() + " ";
 		if (baldfile_parser.standartEnabled()) cmd += "--std=" + baldfile_parser.cppStandart() + " ";
 		cmd += "-o" + baldfile_parser.outputFile() + " ";
+		for (string src : baldfile_parser.sourceFiles()) {
+			cmd += src + " ";
+		}
 		for (string option : baldfile_parser.compilerOptions()) {
 			cmd += option + " ";
 		}
 		for (string dir : baldfile_parser.includeDirs()) {
 			cmd += "-I" + dir + " ";
-		}
-		for (string src : baldfile_parser.sourceFiles()) {
-			cmd += src + " ";
 		}
 		cout << "[.] Ended generating command...\n";
 		system(cmd.c_str());
