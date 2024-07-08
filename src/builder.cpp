@@ -28,7 +28,11 @@ public:
 			cmd += "-I" + dir + " ";
 		}
 		cout << "[.] Ended generating command...\n";
-		system(cmd.c_str());
+		int code = system(cmd.c_str());
+		if (code != 0) {
+			cout << "[!] Error while building project, please read output!\n";
+			return;
+		}
 		cout << "[+] Builded successfully, output: " << baldfile_parser.outputFile() << '\n';
 	}
 };
