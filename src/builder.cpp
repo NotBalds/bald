@@ -11,7 +11,7 @@ public:
 	Builder() {
 		_directory = string(get_current_dir_name());
 	}
-	void build() {
+	int build() {
 		BaldfileParser baldfile_parser(_directory + "/baldfile.toml");
 		cout << "[.] Starting to build " << baldfile_parser.projectName() << "...\n";
 		string cmd;
@@ -30,9 +30,9 @@ public:
 		cout << "[.] Ended generating command...\n";
 		int code = system(cmd.c_str());
 		if (code != 0) {
-			cout << "[!] Error while building project, please read output!\n";
-			return;
+			return 1;
 		}
 		cout << "[+] Builded successfully, output: " << baldfile_parser.outputFile() << '\n';
+		return 0;
 	}
 };
