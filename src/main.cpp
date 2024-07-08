@@ -7,9 +7,31 @@
 
 using namespace std;
 
-inline bool exists (const std::string& name) {
+inline bool exists (const string& name) {
     ifstream f(name.c_str());
     return f.good();
+}
+
+void write_baldfile () {
+	ofstream file("baldfile.toml");
+file << "[project]\n\
+name = \"MyProject\"\n\
+\n\
+[sources]\n\
+files = [\"src/main.cpp\"]\n\
+\n\
+[includes]\n\
+dirs = []\n\
+\n\
+[compiler]\n\
+language = \"g++\"\n\
+enableStdOption = true\n\
+standard = \"c++17\"\n\
+options = []\n\
+\n\
+[output]\n\
+name = \"my_app\"\n\
+";
 }
 
 int main(int, char* argv[]) {
@@ -18,11 +40,7 @@ int main(int, char* argv[]) {
 	if (parser[1] == "init") {
 		string dir = get_current_dir_name();
 		cout << "[.] Creating baldfile\n";
-		int code = system(("cp ~/.local/share/bald/baldfile.template " + dir + "/baldfile.toml").c_str());
-		if (code != 0) {
-			cout << "[!] Error while creating baldfile!\n";
-			return 0;
-		}
+		write_baldfile();
 		cout << "[+] Done!\n";
 	}
 
