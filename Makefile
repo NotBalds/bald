@@ -10,7 +10,6 @@ install:
 	cp ./out ~/.local/bin/bald
 	mkdir -p ~/.local/share/bald
 	cp ./baldfile.template ~/.local/share/bald/
-	cp ./main.cpp.template ~/.local/share/bald/
 	chmod +x ~/.local/bin/bald
 
 clean:
