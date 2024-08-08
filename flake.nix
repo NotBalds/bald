@@ -5,15 +5,15 @@
 	outputs = { nixpkgs, ... }:
 	let systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 	in {
-		defaultPackage = builtins.listToAttrs (builtins.map (system: { name = system; value =
+		packages = builtins.listToAttrs (builtins.map (system: { name = system; value =
 		let pkgs = import nixpkgs { inherit system; };
-		in pkgs.stdenv.mkDerivation {
+		in { default = pkgs.stdenv.mkDerivation {
 			name = "bald";
 			version = "v1.0.0";
 			src = ./.;
 			nativeBuildInputs = with pkgs; [ gnumake gcc ];
 			buildPhase = "make build";
 			installPhase = "mkdir -p $out/bin && cp out $out/bin/bald";
-		};}) systems );
+		};};}) systems );
 	};
 }
